@@ -17,6 +17,8 @@ class Comment(models.Model):
   content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
   object_id = models.PositiveIntegerField()
   content_object = GenericForeignKey("content_type", "object_id")
+  created_at = models.DateTimeField(auto_now_add=True)
+  modified_at = models.DateTimeField(auto_now=True)
 
 
 class Post(models.Model):
@@ -29,6 +31,7 @@ class Post(models.Model):
   summary = models.TextField(max_length=500)
   content = models.TextField()
   tags = models.ManyToManyField(Tag, related_name="posts")
+  # This will make it easier to find comments for a post.
   comments = GenericRelation(Comment)
 
   def __str__(self):
