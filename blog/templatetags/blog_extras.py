@@ -5,12 +5,11 @@ from django.utils.html import format_html
 
 register = template.Library()
 
-@register.simple_tag(takes_context=True)
-def author_details_tag(context):
-  request = context["request"]
-  current_user = request.user
-  post = context["post"]
-  author = post.author
+@register.filter
+def author_details(author, current_user):
+  if not isinstance(author, User):
+    # return empty string as safe default
+    return ""
 
   if author == current_user:
     return format_html("<strong>me</strong>")
