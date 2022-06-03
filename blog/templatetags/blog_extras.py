@@ -2,6 +2,8 @@ from django import template
 from django.contrib.auth.models import User
 from django.utils.html import format_html
 
+from blog.models import Post
+
 
 register = template.Library()
 
@@ -44,3 +46,8 @@ def col(extra_classes=""):
 @register.simple_tag
 def endcol():
   return format_html("</div>")
+
+@register.inclusion_tag("blog/post-list.html")
+def recent_posts(post):
+  posts = Post.objects.exclude(pk=post.pk)[:5]
+  return {"title": "Recent Posts", "posts": posts}
