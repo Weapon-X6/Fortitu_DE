@@ -3,7 +3,33 @@
     "model": "admin.logentry",
     "pk": 1,
     "fields": {
-        "action_time": "2022-05-29T22:42:08.146Z",
+        "action_time": "2022-07-23T04:04:57.713Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "AuthorProfile object for waffe_x@cusis.com",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2022-07-23T04:05:01.607Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "AuthorProfile object for waffe_x@cusis.com",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2022-07-23T04:06:06.288Z",
         "user": 1,
         "content_type": 7,
         "object_id": "1",
@@ -14,22 +40,9 @@
 },
 {
     "model": "admin.logentry",
-    "pk": 2,
+    "pk": 4,
     "fields": {
-        "action_time": "2022-05-29T22:42:13.083Z",
-        "user": 1,
-        "content_type": 7,
-        "object_id": "2",
-        "object_repr": "Python",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 3,
-    "fields": {
-        "action_time": "2022-05-29T22:44:46.218Z",
+        "action_time": "2022-07-23T04:06:08.742Z",
         "user": 1,
         "content_type": 8,
         "object_id": "1",
@@ -40,22 +53,9 @@
 },
 {
     "model": "admin.logentry",
-    "pk": 4,
-    "fields": {
-        "action_time": "2022-05-29T22:44:59.181Z",
-        "user": 1,
-        "content_type": 4,
-        "object_id": "1",
-        "object_repr": "waffe_x",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
     "pk": 5,
     "fields": {
-        "action_time": "2022-05-29T22:55:04.727Z",
+        "action_time": "2022-07-23T04:07:36.016Z",
         "user": 1,
         "content_type": 8,
         "object_id": "1",
@@ -68,7 +68,7 @@
     "model": "admin.logentry",
     "pk": 6,
     "fields": {
-        "action_time": "2022-05-29T22:55:28.991Z",
+        "action_time": "2022-07-23T04:08:01.828Z",
         "user": 1,
         "content_type": 8,
         "object_id": "1",
@@ -81,52 +81,107 @@
     "model": "admin.logentry",
     "pk": 7,
     "fields": {
-        "action_time": "2022-05-29T22:55:39.706Z",
+        "action_time": "2022-07-23T04:08:44.601Z",
         "user": 1,
-        "content_type": 8,
+        "content_type": 6,
         "object_id": "1",
-        "object_repr": "When Girls Telephone Boys",
+        "object_repr": "waffe_x@cusis.com",
         "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"Content\"]}}]"
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
     }
 },
 {
     "model": "admin.logentry",
     "pk": 8,
     "fields": {
-        "action_time": "2022-05-29T22:56:29.270Z",
+        "action_time": "2022-07-23T04:10:09.318Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "hiking",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2022-07-23T04:10:14.391Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "Overnight Volcano Acatenango Hiking Adventure",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2022-07-23T04:14:11.331Z",
         "user": 1,
         "content_type": 8,
         "object_id": "1",
         "object_repr": "When Girls Telephone Boys",
         "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"Content\"]}}]"
+        "change_message": "[{\"changed\": {\"fields\": [\"Published at\"]}}]"
     }
 },
 {
-    "model": "auth.user",
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2022-07-23T04:14:59.878Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "2",
+        "object_repr": "weaponx.origins@gmail.com",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "x5o6ucsuqgfksuspft2w4cl7okcjx8tx",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQAP_C2RC2gCwevfsGsixUqgaS0p6MfzckPeh1ZjJvEWjfSth7XsOSxEWAOP2ySPzMdYj0oHpvklvd1iXKkcjDdnlrKb-uR_s3KNTL2JLxOsbJABrUymrEzPbsLAM4RzZHRMWQ5hkJvfI4GQZNiNYp5Q2Lzxe0aTaR:1oF6MD:mONdjqSL_eNe3uSI84FqBjBbvjwwHvD4mVEYY2Tgh0A",
+        "expire_date": "2022-08-06T04:03:13.534Z"
+    }
+},
+{
+    "model": "blango_auth.user",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$320000$CIkSG4x4sTQyESzcVzeYZb$xXhC+2+/Vbgp69MJdYdcuHWo6O3vbliUvdmf6L3Qhz4=",
-        "last_login": "2022-05-29T22:41:23Z",
+        "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$QVpZTWFpTWpRSTI2d1NlT1NuVmxkZA$796T2Ye8yPII6NkosUN/4GPiuZUAZr84uenX+Xj7yZI",
+        "last_login": "2022-07-23T04:03:13Z",
         "is_superuser": true,
-        "username": "waffe_x",
         "first_name": "Eduardo",
         "last_name": "Argueta",
-        "email": "argueta_eduardo@yahoo.de",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2022-05-29T22:39:14Z",
+        "date_joined": "2022-07-23T04:02:05Z",
+        "email": "waffe_x@cusis.com",
         "groups": [],
         "user_permissions": []
     }
 },
 {
-    "model": "sessions.session",
-    "pk": "bfyu1ztmfp9h6sg2lfxe37zfpvzxazy6",
+    "model": "blango_auth.user",
+    "pk": 2,
     "fields": {
-        "session_data": ".eJxVjMEOwiAQRP-FsyGwAQoevfsNZBcWqRqalPbU-O-2SQ86x3lvZhMR16XGtfMcxyyuQovLb0eYXtwOkJ_YHpNMU1vmkeShyJN2eZ8yv2-n-3dQsdd9nXTw4KEoHcAiaOCizOBNyoRuTyHCYGGw5ImzK46VYuNNsMqG7JL4fAHM2DeA:1nvRb9:Qdpc3sczfzfMq5Gwi-sH1nibSsr4zySMkpGT-uVEGuc",
-        "expire_date": "2022-06-12T22:41:23.830Z"
+        "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$QnE0UFJoQ09GZ29wZkZXdUtEbVVNbA$PLKqtFBfDh9wNCU39vnoKy+cHsOT5+opJvUxEW134WY",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-07-23T04:14:59.776Z",
+        "email": "weaponx.origins@gmail.com",
+        "groups": [],
+        "user_permissions": []
     }
 },
 {
@@ -140,7 +195,7 @@
     "model": "blog.tag",
     "pk": 2,
     "fields": {
-        "value": "Python"
+        "value": "hiking"
     }
 },
 {
@@ -148,16 +203,41 @@
     "pk": 1,
     "fields": {
         "author": 1,
-        "created_at": "2022-05-29T22:44:46.216Z",
-        "modified_at": "2022-05-29T22:56:29.266Z",
-        "published_at": "2022-05-29T22:42:20Z",
+        "created_at": "2022-07-23T04:06:08.736Z",
+        "modified_at": "2022-07-23T04:14:11.328Z",
+        "published_at": "2022-05-20T04:05:53Z",
         "title": "When Girls Telephone Boys",
         "slug": "when-girls-telephone-boys",
         "summary": "The official <strong>Django documentation</strong> covers everything you need to know about Django (and then some).",
-        "content": "With <strong>Django</strong>, you can take web applications from concept to launch in a matter of hours. Django takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. Itâ€™s free and open source.\r\n\r\n\r\n<p>In older architectures, the messaging system defaulted to use the same database used for the main business request/response logic, which created bottlenecks. With the modern decoupling in message-based systems, an app only needs to locate the message broker. In RPC-based systems, one service calls another directly, so it needs to know the address of every instance that it wants to call, making it difficult to maintain as the system grows</p>\r\n</ br>\r\nSo, decoupling the message queuing from the database:\r\n<ol>\r\n<li>Improves database availability</li>\r\n<li>Enables greater message queue scalability</li>\r\n</ol>",
+        "content": "With <strong>Django</strong>, you can take web applications from concept to launch in a matter of hours. Django takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.<p>In older architectures, the messaging system defaulted to use the same database used for the main business request/response logic, which created bottlenecks. With the modern decoupling in message-based systems, an app only needs to locate the message broker. In RPC-based systems, one service calls another directly, so it needs to know the address of every instance that it wants to call, making it difficult to maintain as the system grows</p></ br>So, decoupling the message queuing from the database:<ol><li>Improves database availability</li><li>Enables greater message queue scalability</li></ol>",
         "tags": [
             1
         ]
+    }
+},
+{
+    "model": "blog.post",
+    "pk": 2,
+    "fields": {
+        "author": 1,
+        "created_at": "2022-07-23T04:10:14.386Z",
+        "modified_at": "2022-07-23T04:10:14.386Z",
+        "published_at": "2022-07-23T04:09:27Z",
+        "title": "Overnight Volcano Acatenango Hiking Adventure",
+        "slug": "overnight-volcano-acatenango-hiking-adventure",
+        "summary": "Experience the beauty of Guatemala from above. Trek from Antigua traveling through La Soledad village and on to Acatenango. See the beautiful landscapes that Guatemala has to offer.",
+        "content": "Volcano Acatenango is the sleeping giant, and a twin of the most active volcano in Guatemala. Acatenango is the third highest volcano in all of Central America and it is a real adventure to hike to the top. It gives you the best location to observe the sunset and the sunrise. Sleeping overnight in the base camp of the volcano will be unique experience. Its highest summit is 3,976m (13,044 ft).\r\n\r\nThe itinerary of the trip is broken into two days. Day 1 will begin at 9:00 AM, with a shuttle from Antigua to La Soledad village. The tour guide will pick you up at your hotel. Your hike will begin at 11:00 AM and will continue for approximately 5 hours. You will reach base camp by 17:00 PM in time to watch the sunset.\r\n\r\nThe second day will begin at 4:00 AM, as an hour's hike to the summit will provide a great view of the sunrise. Breakfast will be served back at base camp and the trek will start around 8:30 AM downwards toward the village. Reaching the village by 11:30 AM, you will have some time to look around before the transfer to Antigua. The tour finishes here by 12:30 PM, giving you the rest of your day.",
+        "tags": [
+            2
+        ]
+    }
+},
+{
+    "model": "blog.authorprofile",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "bio": "Meister"
     }
 }
 ]

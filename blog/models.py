@@ -44,4 +44,4 @@ class AuthorProfile(models.Model):
   bio = models.TextField()
 
   def __str__(self):
-    return f"{self.__class__.__name__} object for {sel.user}"
+    return f"{self.__class__.__name__} object for {self.user}"
