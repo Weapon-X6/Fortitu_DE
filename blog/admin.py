@@ -3,8 +3,8 @@ from blog.models import Tag, Post, Comment, AuthorProfile
 
 
 class PostAdmin(admin.ModelAdmin):
-  prepopulated_fields = {"slug": ("title",)}
-  list_display = ('slug', 'published_at')
+    prepopulated_fields = {"slug": ("title",)}
+    list_display = ("slug", "published_at")
 
 
 # Registered models
