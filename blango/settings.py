@@ -29,10 +29,8 @@ class Dev(Configuration):
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = values.BooleanValue(True)
 
-    ALLOWED_HOSTS = values.ListValue(["localhost", "0.0.0.0", ".codio.io"])
-    X_FRAME_OPTIONS = "ALLOW-FROM " + os.environ.get("CODIO_HOSTNAME") + "-8000.codio.io"
+    ALLOWED_HOSTS = values.ListValue(["*"])
     CSRF_COOKIE_SAMESITE = None
-    CSRF_TRUSTED_ORIGINS = [os.environ.get("CODIO_HOSTNAME") + "-8000.codio.io"]
     CSRF_COOKIE_SECURE = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SAMESITE = "None"
@@ -52,7 +50,7 @@ class Dev(Configuration):
         "blog",
         "crispy_forms",
         "crispy_bootstrap5",
-        "debug_toolbar",       
+        "debug_toolbar",
         "allauth",
         "allauth.account",
         "allauth.socialaccount",
@@ -64,7 +62,7 @@ class Dev(Configuration):
         "django.middleware.security.SecurityMiddleware",
         "django.contrib.sessions.middleware.SessionMiddleware",
         "django.middleware.common.CommonMiddleware",
-        # 'django.middleware.csrf.CsrfViewMiddleware',
+        "django.middleware.csrf.CsrfViewMiddleware",
         "django.contrib.auth.middleware.AuthenticationMiddleware",
         "django.contrib.messages.middleware.MessageMiddleware",
         "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -189,7 +187,7 @@ class Dev(Configuration):
         "django.contrib.auth.hashers.BCryptSHA256PasswordHasher",
     ]
 
-    INTERNAL_IPS = ["192.168.10.93"]
+    INTERNAL_IPS = []
 
     AUTH_USER_MODEL = "blango_auth.User"
 
@@ -202,6 +200,12 @@ class Dev(Configuration):
     ACCOUNT_EMAIL_REQUIRED = True
     ACCOUNT_USERNAME_REQUIRED = False
     ACCOUNT_AUTHENTICATION_METHOD = "email"
+
+
+class Codio(Dev):
+    ALLOWED_HOSTS = values.ListValue(["localhost", "0.0.0.0", ".codio.io"])
+    X_FRAME_OPTIONS = f"ALLOW-FROM {os.environ.get('CODIO_HOSTNAME')}-8000.codio.io"
+    CSRF_TRUSTED_ORIGINS = [f"{os.environ.get('CODIO_HOSTNAME')}-8000.codio.io"]
 
 
 class Prod(Dev):
