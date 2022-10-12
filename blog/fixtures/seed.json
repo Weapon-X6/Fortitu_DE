@@ -143,11 +143,79 @@
     }
 },
 {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2022-10-12T23:20:35.965Z",
+        "user": 3,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "conejo@gatillo.sv",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2022-10-12T23:21:22.975Z",
+        "user": 3,
+        "content_type": 11,
+        "object_id": "2",
+        "object_repr": "AuthorProfile object for conejo@gatillo.sv",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2022-10-12T23:39:40.167Z",
+        "user": 3,
+        "content_type": 9,
+        "object_id": "3",
+        "object_repr": "Base Views",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2022-10-12T23:40:56.401Z",
+        "user": 3,
+        "content_type": 9,
+        "object_id": "3",
+        "object_repr": "Base Views",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Content\"]}}]"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "5jxh07cff59g7b0h6zt5680whu3ylys0",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAURO_C2hDgA0WX7j0D4cNHqgaS0q6Md5cmXegs572ZN_NhW4vfOi1-TuzCgJ1-OwzxSXUH6RHqvfHY6rrMyHeFH7TzW0v0uh7u30EJvYw1SZlRiwRW6RQndIYwC7IqG6PyiJYk0Uw2UpTWnqMhEE4FGBgyOPb5AvnfOAQ:1oikwi:Ty1GFNy-NbAQFhUpGRYwE1nGbFkohlEykEPTPLHUcDU",
+        "expire_date": "2022-10-26T23:15:28.596Z"
+    }
+},
+{
     "model": "sessions.session",
     "pk": "x5o6ucsuqgfksuspft2w4cl7okcjx8tx",
     "fields": {
         "session_data": ".eJxVjEEOwiAQAP_C2RC2gCwevfsGsixUqgaS0p6MfzckPeh1ZjJvEWjfSth7XsOSxEWAOP2ySPzMdYj0oHpvklvd1iXKkcjDdnlrKb-uR_s3KNTL2JLxOsbJABrUymrEzPbsLAM4RzZHRMWQ5hkJvfI4GQZNiNYp5Q2Lzxe0aTaR:1oF6MD:mONdjqSL_eNe3uSI84FqBjBbvjwwHvD4mVEYY2Tgh0A",
         "expire_date": "2022-08-06T04:03:13.534Z"
+    }
+},
+{
+    "model": "sites.site",
+    "pk": 1,
+    "fields": {
+        "domain": "example.com",
+        "name": "example.com"
     }
 },
 {
@@ -180,6 +248,23 @@
         "is_active": true,
         "date_joined": "2022-07-23T04:14:59.776Z",
         "email": "weaponx.origins@gmail.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "blango_auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$eWpGaEtZTGxmVkIzVXdtUFVuMlhreQ$PPUaNvR/A4aBZhtNatVA7NFZfHz2t29BLxAPuhFRbcw",
+        "last_login": "2022-10-12T23:15:28Z",
+        "is_superuser": true,
+        "first_name": "Floppy",
+        "last_name": "Michi",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-10-12T23:15:04Z",
+        "email": "conejo@gatillo.sv",
         "groups": [],
         "user_permissions": []
     }
@@ -233,11 +318,36 @@
     }
 },
 {
+    "model": "blog.post",
+    "pk": 3,
+    "fields": {
+        "author": 3,
+        "created_at": "2022-10-12T23:39:40.157Z",
+        "modified_at": "2022-10-12T23:40:56.396Z",
+        "published_at": "2022-10-12T23:21:50Z",
+        "title": "Base Views",
+        "slug": "base-views",
+        "summary": "Many of Django’s built-in class-based views inherit from other class-based views or various mixins. Because this inheritance chain is very important, the ancestor classes are documented under the section title of Ancestors (MRO). MRO is an acronym for Method Resolution Order.",
+        "content": "<strong>class django.views.generic.base.View¶</strong>\r\n<br/ >\r\n<br/ >\r\n    The base view class. All other class-based views inherit from this base class. It isn’t strictly a generic view and thus can also be imported from django.views.\r\n<br/ >\r\n<br/ >\r\n <strong>class django.views.generic.base.TemplateView¶</strong>\r\n<br/ >\r\n<br/ >\r\n    Renders a given template, with the context containing parameters captured in the URL.",
+        "tags": [
+            1
+        ]
+    }
+},
+{
     "model": "blog.authorprofile",
     "pk": 1,
     "fields": {
         "user": 1,
         "bio": "Meister"
+    }
+},
+{
+    "model": "blog.authorprofile",
+    "pk": 2,
+    "fields": {
+        "user": 3,
+        "bio": "My Turn!"
     }
 }
 ]
