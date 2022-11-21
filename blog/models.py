@@ -1,3 +1,5 @@
+from versatileimagefield.fields import VersatileImageField, PPOIField
+
 from django.db import models
 from django.conf import settings
 from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
@@ -36,6 +38,10 @@ class Post(models.Model):
     tags = models.ManyToManyField(Tag, related_name="posts")
     # This will make it easier to find comments for a post.
     comments = GenericRelation(Comment)
+    hero_image = VersatileImageField(
+        upload_to="hero_images", ppoi_field="ppoi", null=True, blank=True
+    )
+    ppoi = PPOIField(null=True, blank=True)
 
     def __str__(self):
         return self.title

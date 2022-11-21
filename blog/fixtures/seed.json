@@ -195,6 +195,40 @@
     }
 },
 {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2022-11-21T04:39:18.423Z",
+        "user": 3,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "When Girls Telephone Boys",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Hero image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2022-11-21T04:39:47.028Z",
+        "user": 3,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "When Girls Telephone Boys",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "4trdwp8l5n43osfw6yr439mqn5wtqi9n",
+    "fields": {
+        "session_data": ".eJxVjDEOwjAMRe-SGUVRHNyUkZ0zVK7tkAJKpKadEHdHkTrA-t97_20m2rc87U3XaRFzMWBOv9tM_NTSgTyo3KvlWrZ1mW1X7EGbvVXR1_Vw_w4ytdxrJ4AUZoBICnIGHoATJkWvKOKDDpIYU2QUdRSdjMmHkZwPiUHRfL4Lxzj6:1owyUA:BMNHhSKVBBOyU2hp1OMpPw1_TlYx2n2LsYxcZLQBVC4",
+        "expire_date": "2022-12-05T04:32:46.842Z"
+    }
+},
+{
     "model": "sessions.session",
     "pk": "5jxh07cff59g7b0h6zt5680whu3ylys0",
     "fields": {
@@ -256,8 +290,8 @@
     "model": "blango_auth.user",
     "pk": 3,
     "fields": {
-        "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$eWpGaEtZTGxmVkIzVXdtUFVuMlhreQ$PPUaNvR/A4aBZhtNatVA7NFZfHz2t29BLxAPuhFRbcw",
-        "last_login": "2022-10-12T23:15:28Z",
+        "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$Tjh2VkZ1Z1BXb0F3OG9HU0xhbndMZQ$nGp59jNC8/OQz0H5D317xA",
+        "last_login": "2022-11-21T04:32:46.783Z",
         "is_superuser": true,
         "first_name": "Floppy",
         "last_name": "Michi",
@@ -289,12 +323,14 @@
     "fields": {
         "author": 1,
         "created_at": "2022-07-23T04:06:08.736Z",
-        "modified_at": "2022-07-23T04:14:11.328Z",
+        "modified_at": "2022-11-21T04:39:47.020Z",
         "published_at": "2022-05-20T04:05:53Z",
         "title": "When Girls Telephone Boys",
         "slug": "when-girls-telephone-boys",
         "summary": "The official <strong>Django documentation</strong> covers everything you need to know about Django (and then some).",
         "content": "With <strong>Django</strong>, you can take web applications from concept to launch in a matter of hours. Django takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.<p>In older architectures, the messaging system defaulted to use the same database used for the main business request/response logic, which created bottlenecks. With the modern decoupling in message-based systems, an app only needs to locate the message broker. In RPC-based systems, one service calls another directly, so it needs to know the address of every instance that it wants to call, making it difficult to maintain as the system grows</p></ br>So, decoupling the message queuing from the database:<ol><li>Improves database availability</li><li>Enables greater message queue scalability</li></ol>",
+        "hero_image": "hero_images/Python_regius_-_ball_python.jpg",
+        "ppoi": "0.74x0.47",
         "tags": [
             1
         ]
@@ -312,6 +348,8 @@
         "slug": "overnight-volcano-acatenango-hiking-adventure",
         "summary": "Experience the beauty of Guatemala from above. Trek from Antigua traveling through La Soledad village and on to Acatenango. See the beautiful landscapes that Guatemala has to offer.",
         "content": "Volcano Acatenango is the sleeping giant, and a twin of the most active volcano in Guatemala. Acatenango is the third highest volcano in all of Central America and it is a real adventure to hike to the top. It gives you the best location to observe the sunset and the sunrise. Sleeping overnight in the base camp of the volcano will be unique experience. Its highest summit is 3,976m (13,044 ft).\r\n\r\nThe itinerary of the trip is broken into two days. Day 1 will begin at 9:00 AM, with a shuttle from Antigua to La Soledad village. The tour guide will pick you up at your hotel. Your hike will begin at 11:00 AM and will continue for approximately 5 hours. You will reach base camp by 17:00 PM in time to watch the sunset.\r\n\r\nThe second day will begin at 4:00 AM, as an hour's hike to the summit will provide a great view of the sunrise. Breakfast will be served back at base camp and the trek will start around 8:30 AM downwards toward the village. Reaching the village by 11:30 AM, you will have some time to look around before the transfer to Antigua. The tour finishes here by 12:30 PM, giving you the rest of your day.",
+        "hero_image": "",
+        "ppoi": "0.5x0.5",
         "tags": [
             2
         ]
@@ -329,6 +367,8 @@
         "slug": "base-views",
         "summary": "Many of Django’s built-in class-based views inherit from other class-based views or various mixins. Because this inheritance chain is very important, the ancestor classes are documented under the section title of Ancestors (MRO). MRO is an acronym for Method Resolution Order.",
         "content": "<strong>class django.views.generic.base.View¶</strong>\r\n<br/ >\r\n<br/ >\r\n    The base view class. All other class-based views inherit from this base class. It isn’t strictly a generic view and thus can also be imported from django.views.\r\n<br/ >\r\n<br/ >\r\n <strong>class django.views.generic.base.TemplateView¶</strong>\r\n<br/ >\r\n<br/ >\r\n    Renders a given template, with the context containing parameters captured in the URL.",
+        "hero_image": "",
+        "ppoi": "0.5x0.5",
         "tags": [
             1
         ]
