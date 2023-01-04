@@ -12,7 +12,7 @@ from rest_framework.routers import DefaultRouter
 from blog.api.views import PostViewSet, UserDetail, TagViewSet
 
 urlpatterns = [
-    path("users/<str:email>", UserDetail.as_view(), name="api_user_detail"),  
+    path("users/<str:email>", UserDetail.as_view(), name="api_user_detail"),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
@@ -20,7 +20,9 @@ urlpatterns = format_suffix_patterns(urlpatterns)
 if os.getenv('DJANGO_CONFIGURATION') == 'Codio':
     url = f"https://{os.environ.get('CODIO_HOSTNAME')}-8000.codio.io/api/v1/"
 elif os.getenv('DJANGO_CONFIGURATION') == 'Dev':
-    url = f"http://127.0.0.1:8000/api/v1/"
+    url = "http://127.0.0.1:8000/api/v1/"
+else:
+    url = "https://weaponx.pythonanywhere.com/api/v1/"
 
 schema_view = get_schema_view(
     openapi.Info(

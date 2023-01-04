@@ -134,7 +134,7 @@ class Dev(Configuration):
         ],
         "DEFAULT_PERMISSION_CLASSES": [
             "rest_framework.permissions.IsAuthenticatedOrReadOnly"
-        ],        
+        ],
         "DEFAULT_THROTTLE_CLASSES": [
             "blog.api.throttling.AnonSustainedThrottle",
             "blog.api.throttling.AnonBurstThrottle",
@@ -263,3 +263,4 @@ class Codio(Dev):
 class Prod(Dev):
     DEBUG = False
     SECRET_KEY = values.SecretValue()
+    STATIC_ROOT = "/home/weaponx/blango/static"
