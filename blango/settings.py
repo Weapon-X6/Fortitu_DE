@@ -31,12 +31,7 @@ class Dev(Configuration):
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = values.BooleanValue(True)
 
-    ALLOWED_HOSTS = values.ListValue(["*"])
-    CSRF_COOKIE_SAMESITE = None
-    CSRF_COOKIE_SECURE = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SAMESITE = "None"
-    SESSION_COOKIE_SAMESITE = "None"
+    ALLOWED_HOSTS = values.ListValue([])
 
     # Application definition
 
@@ -62,10 +57,12 @@ class Dev(Configuration):
         "drf_yasg",
         "django_filters",
         "versatileimagefield",
+        "corsheaders",
     ]
 
     MIDDLEWARE = [
         "debug_toolbar.middleware.DebugToolbarMiddleware",
+        "corsheaders.middleware.CorsMiddleware",
         "django.middleware.security.SecurityMiddleware",
         "django.contrib.sessions.middleware.SessionMiddleware",
         "django.middleware.common.CommonMiddleware",
@@ -253,14 +250,12 @@ class Dev(Configuration):
     MEDIA_ROOT = BASE_DIR / "media"
     MEDIA_URL = "/media/"
 
-
-class Codio(Dev):
-    ALLOWED_HOSTS = values.ListValue(["localhost", "0.0.0.0", ".codio.io"])
-    X_FRAME_OPTIONS = f"ALLOW-FROM {os.environ.get('CODIO_HOSTNAME')}-8000.codio.io"
-    CSRF_TRUSTED_ORIGINS = [f"{os.environ.get('CODIO_HOSTNAME')}-8000.codio.io"]
+    CORS_ORIGIN_ALLOW_ALL = False
+    CORS_ORIGIN_WHITELIST = ("http://localhost:3000",)
 
 
 class Prod(Dev):
     DEBUG = False
     SECRET_KEY = values.SecretValue()
     STATIC_ROOT = "/home/weaponx/blango/static"
+    CORS_ORIGIN_WHITELIST = ("https://eduardoargueta.me/",)
