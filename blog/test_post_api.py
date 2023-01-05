@@ -11,7 +11,6 @@ from blog.models import Post
 
 
 class PostApiTestCase(TestCase):
-
     def setUp(self):
         self.u1 = get_user_model().objects.create_user(
             email="test@example.com", password="password"
@@ -68,7 +67,7 @@ class PostApiTestCase(TestCase):
                     post_dict["published_at"], "%Y-%m-%dT%H:%M:%S.%fZ"
                 ).replace(tzinfo=UTC),
             )
-    
+
     def test_unauthenticated_post_create(self):
         # unset credentials so we are an anonymous user
         self.client.credentials()
@@ -83,7 +82,6 @@ class PostApiTestCase(TestCase):
         resp = self.client.post("/api/v1/posts/", post_dict)
         self.assertEqual(resp.status_code, 401)
         self.assertEqual(Post.objects.all().count(), 2)
-
 
     def test_post_create(self):
         post_dict = {

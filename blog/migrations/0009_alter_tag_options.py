@@ -6,12 +6,12 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0008_alter_tag_value'),
+        ("blog", "0008_alter_tag_value"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='tag',
-            options={'ordering': ['value']},
+            name="tag",
+            options={"ordering": ["value"]},
         ),
     ]

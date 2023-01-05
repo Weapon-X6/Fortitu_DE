@@ -13,7 +13,12 @@ from rest_framework.response import Response
 from rest_framework.exceptions import PermissionDenied
 
 from blog.api.permissions import AuthorModifyOrReadOnly, IsAdminUserForObject
-from blog.api.serializers import PostSerializer, UserSerializer, PostDetailSerializer, TagSerializer
+from blog.api.serializers import (
+    PostSerializer,
+    UserSerializer,
+    PostDetailSerializer,
+    TagSerializer,
+)
 from blog.api.filters import PostFilterSet
 from blog.models import Post, Tag
 from blango_auth.models import User
@@ -62,7 +67,7 @@ class PostViewSet(viewsets.ModelViewSet):
         else:
             queryset = self.queryset.filter(
                 Q(published_at__lte=timezone.now()) | Q(author=self.request.user)
-        )
+            )
 
         time_period_name = self.kwargs.get("period_name")
 
@@ -109,14 +114,14 @@ class TagViewSet(viewsets.ModelViewSet):
     @action(methods=["get"], detail=True, name="Posts with the Tag")
     def posts(self, request, pk=None):
         tag = self.get_object()
-        
+
         page = self.paginate_queryset(tag.posts)
         if page is not None:
             post_serializer = PostSerializer(
                 page, many=True, context={"request": request}
             )
             return self.get_paginated_response(post_serializer.data)
-        
+
         post_serializer = PostSerializer(
             tag.posts, many=True, context={"request": request}
         )

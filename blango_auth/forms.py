@@ -13,4 +13,3 @@ class BlangoRegistrationForm(RegistrationForm):
         super(BlangoRegistrationForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.add_input(Submit("submit", "Register"))
-    

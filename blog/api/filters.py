@@ -5,7 +5,7 @@ from blog.models import Post
 
 class PostFilterSet(filters.FilterSet):
     published_from = filters.DateFilter(
-      field_name="published_at", lookup_expr="gte", label="Published Date From"
+        field_name="published_at", lookup_expr="gte", label="Published Date From"
     )
 
     published_to = filters.DateFilter(
@@ -30,6 +30,3 @@ class PostFilterSet(filters.FilterSet):
     class Meta:
         model = Post
         fields = ["author", "tags"]
-        
-
-    

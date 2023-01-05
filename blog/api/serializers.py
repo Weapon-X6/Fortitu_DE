@@ -9,32 +9,30 @@ class TagField(serializers.SlugRelatedField):
     def to_internal_value(self, data):
         try:
             return self.get_queryset().get_or_create(value=data.lower())[0]
-        except(TypeError, ValueError):
+        except (TypeError, ValueError):
             self.fail(f"Tag value {data} is invalid")
 
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model=User
-        fields=["first_name", "last_name", "email"]
+        model = User
+        fields = ["first_name", "last_name", "email"]
 
 
 class CommentSerializer(serializers.ModelSerializer):
-    id=serializers.IntegerField(required=False)
-    creator=UserSerializer(read_only=True)
+    id = serializers.IntegerField(required=False)
+    creator = UserSerializer(read_only=True)
 
     class Meta:
-        model=Comment
-        fields=["id", "creator", "content", "modified_at", "created_at"]
-        readonly=["modified_at", "created_at"]
+        model = Comment
+        fields = ["id", "creator", "content", "modified_at", "created_at"]
+        readonly = ["modified_at", "created_at"]
 
 
 class PostSerializer(serializers.ModelSerializer):
-    tags=TagField(
-        slug_field="value", many=True, queryset=Tag.objects.all()
-    )
+    tags = TagField(slug_field="value", many=True, queryset=Tag.objects.all())
 
-    author=serializers.HyperlinkedRelatedField(
+    author = serializers.HyperlinkedRelatedField(
         queryset=User.objects.all(), view_name="api_user_detail", lookup_field="email"
     )
 
@@ -47,9 +45,9 @@ class PostSerializer(serializers.ModelSerializer):
     )
 
     class Meta:
-        model=Post
+        model = Post
         exclude = ["ppoi"]
-        readonly=["modified_at","created_at"]
+        readonly = ["modified_at", "created_at"]
 
 
 class PostDetailSerializer(PostSerializer):

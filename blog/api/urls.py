@@ -17,7 +17,7 @@ urlpatterns = [
 
 urlpatterns = format_suffix_patterns(urlpatterns)
 
-if os.getenv('DJANGO_CONFIGURATION') == 'Dev':
+if os.getenv("DJANGO_CONFIGURATION") == "Dev":
     url = "http://127.0.0.1:8000/api/v1/"
 else:
     url = "https://weaponx.pythonanywhere.com/api/v1/"
