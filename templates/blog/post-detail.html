@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load blog_extras cache %}
+{% load blog_extras cache markdownify %}
 {% block content %}
   <h2>{{ post.title }}</h2>  
   {% row %}
@@ -16,7 +16,7 @@
   {% endif %}
   {% row %}
     {% col %}
-      {{ post.content|safe }}
+      {{ post.content|markdownify|safe }}
     {% endcol %}
   {% endrow %}
   {% row %}

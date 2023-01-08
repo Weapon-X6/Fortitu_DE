@@ -58,6 +58,7 @@ class Dev(Configuration):
         "django_filters",
         "versatileimagefield",
         "corsheaders",
+        "markdownify",
     ]
 
     MIDDLEWARE = [
