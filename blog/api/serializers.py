@@ -67,7 +67,7 @@ class PostDetailSerializer(PostSerializer):
     def get_content(self, post):
         # build absolute URIs for embedded images
         request = self.context.get("request")
-        return post.content.replace("/media/", request.build_absolute_uri("/media/"))
+        return post.content.replace("static/", request.build_absolute_uri("/static/"))
 
     def update(self, instance, validated_data):
         comments = validated_data.pop("comments")
