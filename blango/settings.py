@@ -31,7 +31,7 @@ class Dev(Configuration):
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = values.BooleanValue(True)
 
-    ALLOWED_HOSTS = values.ListValue([])
+    ALLOWED_HOSTS = values.ListValue(["127.0.0.1", "weaponx.pythonanywhere.com"])
 
     # Application definition
 
