@@ -16,23 +16,31 @@
   {% endif %}
   {% row %}
     {% col %}
-      {{ post.content|markdownify|safe }}
+      <div class="post-detail mt-3 mb-3">
+        {{ post.content|markdownify }}
+      </div>
     {% endcol %}
   {% endrow %}
   {% row %}
     {% col %}
       {% if post.author.profile %}
-        {% row %}
-          {% col %}
-            <h4>About the author</h4>
-            <p>{{ post.author.profile.bio }}</p>
-          {% endcol %}
-        {% endrow %}
+        <figure>
+          <blockquote class="blockquote">
+            <p>About the author</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            {{ post.author.profile.bio }}
+          </figcaption>
+        </figure>
       {% endif %}
-      {% include "blog/post-comments.html" %}
+      <div class="mt-4 mb-4">
+        {% include "blog/post-comments.html" %}
+      </div>
+      <div class="mt-4 mb-4">
         {% cache 3600 recent_posts post %}
           {% recent_posts post %}
         {% endcache %}
+      </div>
     {% endcol %}
   {% endrow %}
 {% endblock %}

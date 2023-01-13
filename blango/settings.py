@@ -58,7 +58,7 @@ class Dev(Configuration):
         "django_filters",
         "versatileimagefield",
         "corsheaders",
-        "markdownify",
+        "markdownify.apps.MarkdownifyConfig",
     ]
 
     MIDDLEWARE = [
@@ -171,6 +171,8 @@ class Dev(Configuration):
 
     STATIC_URL = "/static/"
 
+    STATIC_ROOT = BASE_DIR / "static"
+
     # Default primary key field type
     # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -253,6 +255,13 @@ class Dev(Configuration):
 
     CORS_ORIGIN_ALLOW_ALL = False
     CORS_ORIGIN_WHITELIST = ("http://localhost:3000",)
+
+    MARKDOWNIFY = {
+        "default": {
+            "WHITELIST_TAGS": ["img", "p", "blockquote", "ol", "li", "ul", "a", "strong", "em", "code", "h3", ],
+            "WHITELIST_ATTRS": ["src"],
+        }
+    }
 
 
 class Prod(Dev):

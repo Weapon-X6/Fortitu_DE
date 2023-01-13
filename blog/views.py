@@ -27,7 +27,9 @@ def index(request):
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
-
+    post.content = post.content.replace(
+        "static/", request.build_absolute_uri("/static/")
+    )
     if request.user.is_active:
         if request.method == "POST":
             comment_form = CommentForm(request.POST)

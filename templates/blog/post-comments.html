@@ -12,25 +12,17 @@
     {% endcol %}
 {% endrow %}
 {% empty %}
-    {% row "border-top border-bottom" %}
-        {% col %}
-            <p>No comments.</p>
-        {% endcol %}
-    {% endrow %}
+  {% row "border-top border-bottom" %}
+    {% col %}
+      <p>No comments.</p>
+    {% endcol %}
+  {% endrow %}
 {% endfor %}
 {% if request.user.is_active %}
 {% row "mt-4" %}
-    {% col %}
-        <h4>Add Comment</h4>
-        {# <form method="post"> #}
-        {#    {% csrf_token %} #}
-        {#    {{ comment_form|crispy }} #}
-        {#    <p> #}
-        {#        <button type="submit" class="btn btn-primary">Submit</button> #}
-        {#    </p> #}
-        {# </form> #}
-        
-        {% crispy comment_form %}
-    {% endcol %}
+  {% col %}
+    <h5>Add Comment</h5>
+    {% crispy comment_form %}
+  {% endcol %}
 {% endrow %}
 {% endif %}

@@ -1,3 +1,4 @@
+{% load static blog_extras %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,26 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>{% block title %}Welcome to Blango{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'blog/theme.css' %}">
   </head>
   <body>
-    <div class="container-fluid bg-dark text-light">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-              <a class="navbar-brand" href="/">Blango Home</a>
-              <div class="d-flex">
-                  {% if request.user.is_active %}
-                      <a class="nav-link" href="{% url "profile" %}">Profile</a>
-                      <a class="nav-link" href="{% url "logout" %}">Log Out</a>
-                  {% else %}
-                      <a class="nav-link" href="{% url "django_registration_register" %}">Register</a>
-                      <a class="nav-link" href="{% url "login" %}">Log In</a>
-                  {% endif %}
-              </div>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Home</a>
+          <div class="d-flex">
+            {% if request.user.is_active %}
+              <a class="nav-link link-secondary" href="{% url "profile" %}">Profile</a>
+              <a class="nav-link link-secondary" href="{% url "logout" %}">Log Out</a>
+            {% else %}
+              <a class="nav-link" href="{% url "django_registration_register" %}">Register</a>
+              <a class="nav-link" href="{% url "login" %}">Log In</a>
+            {% endif %}
           </div>
+        </div>
       </nav>
-      {% block content %}
-
-      {% endblock %}
+      {% row "mt-3 mb-3" %}
+          {% col  %}
+          {% endcol %}
+          {% col "col-lg-8"  %}
+            {% block content %}
+            {% endblock %}
+          {% endcol %}
+          {% col  %}
+          {% endcol %}
+      {% endrow %}
     </div>   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
