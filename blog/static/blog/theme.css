@@ -1,0 +1,31 @@
+.post-detail blockquote{
+    border-left: 4px solid rgba(0,150,191,.67);
+    border-left: 4px solid rgba(0,150,191,.67);
+    margin: 1.5em 0;
+    padding: 0.5em 1em;
+    font-style: italic;
+}
+.post-detail img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    color: #c44b4b;
+}
+a:hover {
+  color: #922121;
+}
+
+/* Registration form */
+#hint_id_password2{
+    color: #9d9d9d;
+}
+
+nav .nav-link{
+    color: gold;
+}
+nav .nav-link:hover{
+    color: #b09606;
+}

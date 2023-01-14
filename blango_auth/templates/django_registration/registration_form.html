@@ -3,9 +3,11 @@
 {% block title %}Register for Blango{% endblock %}
 {% block content %}
   {% row "justify-content-center" %}
-    {% col "col-md-6" %}
-      <hd>Register for Blango</h2>
+    {% col "col-md-8" %}
+      <h2>Register for Blango</h2>
+      <div class="registration">
       {% crispy form %}
+      </div>
     {% endcol %}
   {% endrow %}
 {% endblock %}
