@@ -18,6 +18,7 @@ import debug_toolbar
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.shortcuts import render
 from django.urls import path, include
 from django_registration.backends.activation.views import RegistrationView
 
@@ -29,6 +30,7 @@ import blango_auth.views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", blog.views.index),
+    path("about/", lambda request: render(request, 'About.html'), name="about"),
     path("post/<slug>/", blog.views.post_detail, name="blog-post-detail"),
     path("ip/", blog.views.get_ip),
     path("accounts/", include("django.contrib.auth.urls")),
