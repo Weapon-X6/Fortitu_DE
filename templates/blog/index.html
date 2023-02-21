@@ -1,7 +1,14 @@
 {% extends "base.html" %}
 {% load blog_extras %}
 {% block content %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Posts</li>
+  </ol>
+</nav>
   <h2>Blog Posts</h2>
+  <br>
   {% for post in posts %}
   {% row "border-bottom" %}
     {% col %}
