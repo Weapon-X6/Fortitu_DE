@@ -268,4 +268,4 @@ class Prod(Dev):
     DEBUG = False
     SECRET_KEY = values.SecretValue()
     STATIC_ROOT = "/home/weaponx/blango/static"
-    CORS_ORIGIN_WHITELIST = ("https://eduardoargueta.me/",)
+    CORS_ORIGIN_WHITELIST = ("https://eduardoargueta.me/", "https://www.eduardoargueta.me/",)
