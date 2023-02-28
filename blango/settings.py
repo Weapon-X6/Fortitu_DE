@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
 from datetime import timedelta
 
 from configurations import Configuration, values
@@ -21,6 +20,7 @@ import dj_database_url
 class Dev(Configuration):
     # Build paths inside the project like this: BASE_DIR / 'subdir'.
     BASE_DIR = Path(__file__).resolve().parent.parent
+    DOTENV = BASE_DIR / ".env"
 
     # Quick-start development settings - unsuitable for production
     # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -31,7 +31,7 @@ class Dev(Configuration):
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = values.BooleanValue(True)
 
-    ALLOWED_HOSTS = values.ListValue(["127.0.0.1", "weaponx.pythonanywhere.com"])
+    ALLOWED_HOSTS = values.ListValue(["127.0.0.1", "www.eduardoargueta.me"])
 
     # Application definition
 
@@ -268,4 +268,3 @@ class Prod(Dev):
     DEBUG = False
     SECRET_KEY = values.SecretValue()
     STATIC_ROOT = "/home/weaponx/blango/static"
-    CORS_ORIGIN_WHITELIST = ("https://eduardoargueta.me/", "https://www.eduardoargueta.me/",)
