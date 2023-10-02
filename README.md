@@ -3,9 +3,8 @@
 ### Features
 
 * Allows reading blog posts
-* Allows sign up
 * Allows adding/updating/deleting posts and adding comments on posts for authenticated users
-* Implement third-party integration to login using Google
+* Allows login using Google credentials through the OAuth 2.0 protocol
 * Use [Markdown](https://www.markdownguide.org/basic-syntax/) instead of html tags to format the blog posts when adding
 
 ### Installation
