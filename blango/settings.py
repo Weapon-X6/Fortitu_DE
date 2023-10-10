@@ -258,8 +258,33 @@ class Dev(Configuration):
 
     MARKDOWNIFY = {
         "default": {
-            "WHITELIST_TAGS": ["img", "p", "blockquote", "ol", "li", "ul", "a", "strong", "em", "code", "h3", ],
-            "WHITELIST_ATTRS": ["src"],
+            "MARKDOWN_EXTENSIONS": [
+                "markdown.extensions.extra",  # This includes fenced code, and others
+                "markdown.extensions.codehilite",
+            ],
+            "WHITELIST_TAGS": [
+                "img",
+                "p",
+                "blockquote",
+                "ol",
+                "li",
+                "ul",
+                "a",
+                "em",
+                "strong",
+                "h3",
+                "mark",
+                "code",
+                "pre",
+                "span",
+                "div",
+            ],
+            "WHITELIST_ATTRS": [
+                "class",
+                "href",
+                "src",
+            ],
+            "BLEACH": True,
         }
     }
 
