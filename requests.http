@@ -1,0 +1,24 @@
+### Get all Posts
+GET http://127.0.0.1:8000/api/v1/posts/
+
+###  Get Post by Id
+GET http://127.0.0.1:8000/api/v1/posts/1
+
+###  Get Post from logged user
+GET http://127.0.0.1:8000/api/v1/posts/mine
+
+###  Get Post by time
+GET http://127.0.0.1:8000/api/v1/posts/by-time/
+
+### Create blog post
+POST http://127.0.0.1:8000/api/v1/posts/
+Content-type: application/json
+
+{
+    "title": "my post title",
+    "summary": "a great summary",
+    "content": "Amazing body"
+}
+
+### Get all Tags
+GET http://127.0.0.1:8000/api/v1/tags/
