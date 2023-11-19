@@ -35,28 +35,6 @@ class PostViewSet(viewsets.ModelViewSet):
             return PostSerializer
         return PostDetailSerializer
 
-    @method_decorator(cache_page(300))
-    @method_decorator(vary_on_headers("Authorization"))
-    @method_decorator(vary_on_cookie)
-    @action(methods=["get"], detail=False, name="Posts by the logged in user")
-    def mine(self, request):
-        if request.user.is_anonymous:
-            raise PermissionDenied("You must be logged in to see which Posts are yours")
-        posts = self.get_queryset().filter(author=request.user)
-
-        page = self.paginate_queryset(posts)
-
-        if page is not None:
-            serializer = PostSerializer(page, many=True, context={"request": request})
-            return self.get_paginated_response(serializer.data)
-
-        serializer = PostSerializer(posts, many=True, context={"request": request})
-        return Response(serializer.data)
-
-    @method_decorator(cache_page(120))
-    def list(self, *args, **kwargs):
-        return super(PostViewSet, self).list(*args, **kwargs)
-
     def get_queryset(self):
         if self.request.user.is_anonymous:
             # published only
@@ -90,6 +68,24 @@ class PostViewSet(viewsets.ModelViewSet):
                 f"Time period {time_period_name} is not valid, should be "
                 f"'new', 'today' or 'week'"
             )
+
+    @method_decorator(cache_page(300))
+    @method_decorator(vary_on_headers("Authorization"))
+    @method_decorator(vary_on_cookie)
+    @action(methods=["get"], detail=False, name="Posts by the logged in user")
+    def mine(self, request):
+        if request.user.is_anonymous:
+            raise PermissionDenied("You must be logged in to see which Posts are yours")
+        posts = self.get_queryset().filter(author=request.user)
+
+        page = self.paginate_queryset(posts)
+
+        if page is not None:
+            serializer = PostSerializer(page, many=True, context={"request": request})
+            return self.get_paginated_response(serializer.data)
+
+        serializer = PostSerializer(posts, many=True, context={"request": request})
+        return Response(serializer.data)
 
     @method_decorator(cache_page(120))
     @method_decorator(vary_on_headers("Authorization", "Cookie"))

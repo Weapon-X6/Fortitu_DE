@@ -1,0 +1,12 @@
+[run]
+source = .
+omit = 
+    test*
+    */migrations/*
+    wsgi.py, asgi.py
+    manage.py
+    urls.py
+
+
+[report]
+show_missing = True

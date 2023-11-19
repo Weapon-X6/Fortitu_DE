@@ -43,6 +43,9 @@ class Post(models.Model):
     )
     ppoi = PPOIField(null=True, blank=True)
 
+    class Meta:
+        ordering = ["-created_at"]
+
     def __str__(self):
         return self.title
 

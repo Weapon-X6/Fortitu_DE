@@ -11,3 +11,11 @@ venv
 # IDEs
 .vscode/*
 .idea/
+static
+
+# Coverage
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
