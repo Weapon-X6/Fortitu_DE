@@ -10,11 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
 from datetime import timedelta
+from pathlib import Path
 
-from configurations import Configuration, values
 import dj_database_url
+from configurations import Configuration, values
 
 
 class Dev(Configuration):
@@ -31,7 +31,7 @@ class Dev(Configuration):
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = values.BooleanValue(True)
 
-    ALLOWED_HOSTS = values.ListValue(["127.0.0.1", "www.eduardoargueta.me"])
+    ALLOWED_HOSTS = values.ListValue(["127.0.0.1", "localhost"])
 
     # Application definition
 
@@ -292,4 +292,5 @@ class Dev(Configuration):
 class Prod(Dev):
     DEBUG = False
     SECRET_KEY = values.SecretValue()
+    ALLOWED_HOSTS = values.ListValue(["www.eduardoargueta.me"])
     STATIC_ROOT = "/home/weaponx/blango/static"
