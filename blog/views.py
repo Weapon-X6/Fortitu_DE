@@ -1,30 +1,27 @@
 import logging
 
-from django.utils import timezone
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
+from django.utils import timezone
+from django.views.decorators.cache import cache_page
 
-# from django.views.decorators.cache import cache_page
-# from django.views.decorators.vary import vary_on_cookie
-
-from blog.models import Post
 from blog.forms import CommentForm
-
+from blog.models import Post
 
 logger = logging.getLogger(__name__)
 
-# @cache_page(300)
-# @vary_on_cookie
+
+@cache_page(24 * 60 * 60)
 def index(request):
-    # from django.http import HttpResponse
-    # return HttpResponse(str(request.user).encode("ascii"))
     posts = Post.objects.filter(published_at__lte=timezone.now()).select_related(
         "author"
     )
     logger.debug("Got %d posts", len(posts))
+
     return render(request, "blog/index.html", {"posts": posts})
 
 
+@cache_page(24 * 60 * 60)
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
     post.content = post.content.replace(
