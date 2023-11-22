@@ -5,7 +5,7 @@ import pytz
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 
-from .models import Post
+from blog.models import Post
 
 
 class BlogTestCase(TestCase):
