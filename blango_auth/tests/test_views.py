@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 
 
-class AuthTestCase(TestCase):
+class AuthTests(TestCase):
     def test_profile_unauthenticated(self):
         response = self.client.get("/accounts/profile/")
 
