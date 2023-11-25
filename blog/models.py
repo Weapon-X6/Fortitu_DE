@@ -1,9 +1,8 @@
-from versatileimagefield.fields import VersatileImageField, PPOIField
-
-from django.db import models
 from django.conf import settings
 from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
 from django.contrib.contenttypes.models import ContentType
+from django.db import models
+from versatileimagefield.fields import PPOIField, VersatileImageField
 
 
 class Tag(models.Model):
@@ -57,4 +56,4 @@ class AuthorProfile(models.Model):
     bio = models.TextField()
 
     def __str__(self):
-        return f"{self.__class__.__name__} object for {self.user}"
+        return str(self.user)
