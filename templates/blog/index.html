@@ -22,7 +22,7 @@
         ({{ post.content|wordcount }} words)
         <a href="{% url "blog-post-detail" post.slug %}">Read more</a>
       </p>
-    {% endcol %}  
+    {% endcol %}
   {% endrow %}
   {% endfor %}
 {% endblock %}

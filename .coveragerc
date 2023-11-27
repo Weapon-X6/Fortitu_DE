@@ -1,6 +1,6 @@
 [run]
 source = .
-omit = 
+omit =
     test*
     */migrations/*
     wsgi.py, asgi.py
