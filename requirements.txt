@@ -8,6 +8,7 @@ djangorestframework==3.14.0
 django-allauth==0.52.0
 django-configurations==2.4
 django-cors-headers==3.13.0
+django-crispy-forms==1.14.0
 django-debug-toolbar==3.8.1
 django-filter==22.1
 django-markdownify==0.9.2
