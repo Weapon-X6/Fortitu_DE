@@ -1,4 +1,5 @@
 ![example branch parameter](https://github.com/Weapon-X6/Fortitu_DE/actions/workflows/django.yml/badge.svg?branch=master)
+[![codecov](https://codecov.io/gh/Weapon-X6/Fortitu_DE/graph/badge.svg?token=1F8BF5T9NE)](https://codecov.io/gh/Weapon-X6/Fortitu_DE)
 
 # Blango Blog
 
