@@ -22,16 +22,13 @@ def author_details(author, current_user):
     if author.first_name and author.last_name:
         name = f"{author.first_name} {author.last_name}"
     else:
-        name = f"{author.username}"
+        name = f"{author.email}"
 
     if author.email:
         prefix = format_html('<a href="mailto:{}">', author.email)
         suffix = format_html("</a>")
-    else:
-        prefix = ""
-        suffix = ""
 
-    return format_html("{} {}", name, suffix)
+    return format_html("{} {} {}", prefix, name, suffix)
 
 
 @register.simple_tag
