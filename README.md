@@ -19,7 +19,7 @@ python -m pip install -r requirements.txt
 
 If using Windows
 ```
-pip uninstall python-magic -y    
+pip uninstall python-magic -y
 ```
 
 Run migrations
