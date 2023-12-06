@@ -28,6 +28,11 @@ Run migrations
 python manage.py migrate
 ```
 
+and optionally, start off with demo data
+```
+python manage.py loaddata seed.json
+```
+
 ### Execution
 
 To play around change in *manage.py* the environment from "Prod" to "Dev".
