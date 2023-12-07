@@ -38,7 +38,7 @@ class BlogTestCase(TestCase):
         self.assertContains(response, self.published_post.summary)
         self.assertTemplateUsed(response, "blog/index.html")
 
-    def test_post_detail(self):
+    def test_post_detail_get(self):
         response = self.client.get(f"/post/{self.published_post.slug}/")
 
         self.assertEqual(response.status_code, HTTPStatus.OK)
@@ -47,3 +47,13 @@ class BlogTestCase(TestCase):
         self.assertTemplateUsed(response, "blog/post-byline.html")
         self.assertTemplateUsed(response, "blog/post-comments.html")
         self.assertTemplateUsed(response, "blog/post-recent-list.html")
+
+    def test_post_detail_post(self):
+        user = get_user_model().objects.create(
+            email="wheredowegofrom@wnf.sv", password="wnf_beba*23"
+        )
+        payload = {"content": "The Art of Dying", "creator": user.id}
+
+        response = self.client.post(f"/post/{self.published_post.slug}/", payload)
+
+        self.assertEqual(response.status_code, HTTPStatus.OK)
