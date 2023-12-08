@@ -2,6 +2,7 @@ from django.conf import settings
 from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
+from django.urls import reverse
 from versatileimagefield.fields import PPOIField, VersatileImageField
 
 
@@ -47,6 +48,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse("blog-post-detail", args=[self.slug])
 
 
 class AuthorProfile(models.Model):

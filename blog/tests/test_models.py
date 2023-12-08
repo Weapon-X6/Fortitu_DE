@@ -12,13 +12,22 @@ class TagModelTests(TestCase):
 
 
 class PostModelTests(TestCase):
-    def test_str_method(self):
+    @classmethod
+    def setUpTestData(cls):
         user = get_user_model().objects.create(
             email="ich@cautioners.de", password="awayfrom__me?"
         )
-        post = Post.objects.create(author=user, title="Turned your back on mich")
+        cls.post = Post.objects.create(
+            author=user, title="Turned your back on mich", slug="Pacita"
+        )
 
-        self.assertEqual(post.__str__(), post.title)
+    def test_str_method(self):
+        self.assertEqual(self.post.__str__(), self.post.title)
+
+    def test_get_absolute_url(self):
+        canonical_url = self.post.get_absolute_url()
+
+        self.assertEqual(canonical_url, f"/post/{self.post.slug}/")
 
 
 class AuthorProfileModelTests(TestCase):
