@@ -57,3 +57,9 @@ class BlogTestCase(TestCase):
         response = self.client.post(f"/post/{self.published_post.slug}/", payload)
 
         self.assertEqual(response.status_code, HTTPStatus.OK)
+
+    def test_post_table(self):
+        response = self.client.get("/post-table/")
+
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+        self.assertTemplateUsed(response, "blog/post-table.html")
