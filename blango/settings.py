@@ -182,18 +182,21 @@ class Dev(Configuration):
             "require_debug_false": {
                 "()": "django.utils.log.RequireDebugFalse",
             },
+            "require_debug_true": {
+                "()": "django.utils.log.RequireDebugTrue",
+            },
         },
         "formatters": {
-            "verbose": {
-                "format": "{levelname} {asctime} {module} {process:d} {thread:d} {message}",
-                "style": "{",
-            },
+            "rich": {"datefmt": "[%X]"},
         },
         "handlers": {
             "console": {
-                "class": "logging.StreamHandler",
-                "stream": "ext://sys.stdout",
-                "formatter": "verbose",
+                "class": "rich.logging.RichHandler",
+                "filters": ["require_debug_true"],
+                "formatter": "rich",
+                "level": "DEBUG",
+                "rich_tracebacks": True,
+                "tracebacks_show_locals": True,
             },
             "mail_admins": {
                 "level": "ERROR",
@@ -207,10 +210,14 @@ class Dev(Configuration):
                 "level": "ERROR",
                 "propagate": True,
             },
+            "django": {
+                "handlers": [],
+                "level": "INFO",
+            },
         },
         "root": {
             "handlers": ["console"],
-            "level": "DEBUG",
+            "level": "INFO",
         },
     }
 
