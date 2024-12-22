@@ -30,6 +30,8 @@ class Dev(Configuration):
 
     ALLOWED_HOSTS = values.ListValue(["127.0.0.1", "localhost"])
 
+    SITE_ID = 1
+
     # Application definition
 
     INSTALLED_APPS = [
@@ -40,6 +42,7 @@ class Dev(Configuration):
         "django.contrib.sessions",
         "django.contrib.messages",
         "django.contrib.sites",
+        "django.contrib.sitemaps",
         "django.contrib.staticfiles",
         "blog",
         "crispy_forms",
