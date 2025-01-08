@@ -15,7 +15,7 @@ django-markdownify==0.9.5
 django-registration==5.1.0
 django-versatileimagefield==3.1
 djangorestframework-simplejwt==5.3.1
-dj-database-url==1.2.0
+dj-database-url==2.3.0
 drf-yasg==1.21.4
 gunicorn==22.0.0
 pre-commit==3.5.0
