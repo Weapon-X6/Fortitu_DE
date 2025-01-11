@@ -10,7 +10,7 @@ django-configurations==2.5
 django-cors-headers==3.13.0
 django-crispy-forms==2.3
 django-debug-toolbar==3.8.1
-django-filter==22.1
+django-filter==24.3
 django-markdownify==0.9.5
 django-registration==5.1.0
 django-versatileimagefield==3.1
